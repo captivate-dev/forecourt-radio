@@ -100,6 +100,7 @@ function HeadSection() {
           content="Forecourt-Radio is a curated music and advertising radio service for service stations and fuel forecourts."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content="https://forecourtradio.com.au/bg4.jpg" />
       </head>
     </>
   );
@@ -211,14 +212,7 @@ function AudioSamplesSection() {
         "Sample promotional message highlighting a time-limited discount on fuel or in-store offers.",
       file: "/audio/promo_sample.mp3",
       duration: "2:10 demo",
-    },
-    {
-      title: "Music + Ad Break Example",
-      description:
-        "A short blend of music followed by a clean advertising slot, as it might sound on your forecourt.",
-      file: "/audio/mixed-break-music-plus-ad.mp3",
-      duration: "0:45 demo",
-    },
+    }
   ];
 
   return (
