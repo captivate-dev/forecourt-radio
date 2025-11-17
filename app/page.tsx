@@ -27,9 +27,19 @@ export default function Home() {
 
 
     // Replace these with your actual EmailJS IDs
-    const SERVICE_ID = "your_service_id";
-    const TEMPLATE_ID = "your_template_id";
-    const PUBLIC_KEY = "your_public_key";
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+  console.error("EmailJS env vars are missing");
+  setStatus({
+    type: "error",
+    message: "Email setup is incomplete. Please try again later.",
+  });
+  setIsSubmitting(false);
+  return;
+}
 
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
@@ -279,6 +289,19 @@ function EnquirySection({
             <li>Content &amp; advertising tailored to your brand</li>
             <li>Technical support for PA speaker integration</li>
           </ul>
+           <div className="contact-direct">
+            <h3>Contact us directly</h3>
+            <p>Prefer email or a quick call? Reach us on:</p>
+            <a
+              href="mailto:hello@forecourt-radio.com.au"
+              className="contact-link"
+            >
+              info@forecourt-radio.com
+            </a>
+            <a href="tel:+61400000000" className="contact-link">
+              (08) 9368 7553
+            </a>
+          </div>
         </div>
 
         <form ref={formRef} className="form" onSubmit={onSubmit}>
@@ -773,6 +796,36 @@ const globalStyles = `
     gap: 12px;
     flex-wrap: wrap;
   }
+
+    .contact-direct {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .contact-direct h3 {
+    margin: 0 0 6px;
+    font-size: 14px;
+  }
+
+  .contact-direct p {
+    margin: 0 0 6px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .contact-link {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 4px;
+  }
+
+  .contact-link:hover {
+    text-decoration: underline;
+  }
+
 
   @media (max-width: 960px) {
     .cards-grid {
