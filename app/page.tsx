@@ -212,7 +212,15 @@ function AudioSamplesSection() {
         "Sample promotional message highlighting a time-limited discount on fuel or in-store offers.",
       file: "/audio/promo_sample.mp3",
       duration: "2:10 demo",
-    }
+    },
+     {
+      title: "A Moment To Puase",
+      description:
+        "A calming, atmospheric message designed to create a brief moment of relaxation for customers as they pause during their refuel experience.",
+      file: "/audio/sample3.mp3",
+      duration: "1:30 demo",
+    },
+    
   ];
 
   return (
