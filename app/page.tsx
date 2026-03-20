@@ -297,18 +297,15 @@ function EnquirySection({
             <li>Content &amp; advertising tailored to your brand</li>
             <li>Technical support for PA speaker integration</li>
           </ul>
-           <div className="contact-direct">
+          <div className="contact-direct">
             <h3>Contact us directly</h3>
             <p>Prefer email or a quick call? Reach us on:</p>
-            <a
-              href="mailto:hello@forecourt-radio.com.au"
-              className="contact-link"
-            >
+            <p className="contact-link">
               info@forecourtradio.com.au
-            </a>
-            <a href="tel:+61400000000" className="contact-link">
+            </p>
+            <p className="contact-link">
               (08) 9368 7553
-            </a>
+            </p>
           </div>
         </div>
 
@@ -371,4 +368,3 @@ function Footer() {
     </footer>
   );
 }
-
