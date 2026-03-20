@@ -214,13 +214,19 @@ function AudioSamplesSection() {
       duration: "2:10 demo",
     },
      {
-      title: "A Moment To Puase",
+      title: "A Moment To Pause",
       description:
         "A calming, atmospheric message designed to create a brief moment of relaxation for customers as they pause during their refuel experience.",
       file: "/audio/sample3.mp3",
       duration: "1:30 demo",
     },
-    
+    {
+      title: "Conversation and Specials",
+      description:
+        "Conversation and specials segment streamed from the provided audio URL.",
+      file: "https://www.digitalmarketing.com.au/rotation/australia/forecourtradio.mp3",
+      duration: "Streaming sample",
+    }
   ];
 
   return (
@@ -298,7 +304,7 @@ function EnquirySection({
               href="mailto:hello@forecourt-radio.com.au"
               className="contact-link"
             >
-              info@forecourt-radio.com
+              info@forecourtradio.com.au
             </a>
             <a href="tel:+61400000000" className="contact-link">
               (08) 9368 7553
@@ -365,5 +371,4 @@ function Footer() {
     </footer>
   );
 }
-
 
